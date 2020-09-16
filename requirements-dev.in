@@ -1,0 +1,6 @@
+-r requirements.in
+black
+flake8
+ipdb
+pip-tools
+pre-commit
