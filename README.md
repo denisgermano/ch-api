@@ -40,7 +40,7 @@ $ docker-compose run api python manage.py test
 
 
 ## Extra notes
-- I changed the default Django User to be the Employee model, this was not a good approach, but as I already did this way and the time was running low, I decided to keep this way.
+- I changed the default Django User to be the Employee model, this was not a good approach, but as I already did this way and the time was running low, I decided to keep this way. Would change to use the same way, but keep the name User and add a flag like `is_employee`, so could keep as a generic User with some extra attributes
 
 - No permission/auth system was used, the next step would be using some approach as token or session to protect the API
 
