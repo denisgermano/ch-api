@@ -5,6 +5,7 @@
 #    pip-compile --output-file=requirements.txt requirements.in
 #
 asgiref==3.2.10           # via django
+django-countries==6.1.3   # via -r requirements.in
 django==3.1.1             # via -r requirements.in, djangorestframework
 djangorestframework==3.11.1  # via -r requirements.in
 psycopg2-binary==2.8.6    # via -r requirements.in

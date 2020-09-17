@@ -4,3 +4,4 @@ flake8
 ipdb
 pip-tools
 pre-commit
+pylint
