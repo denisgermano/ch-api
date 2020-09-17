@@ -16,3 +16,4 @@ services:
       - db
     volumes:
       - .:/app
+      - ./postgres-data:/var/lib/postgresql/data
