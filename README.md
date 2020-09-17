@@ -19,6 +19,7 @@ To start the service locally run
 ```console
 $ docker-compose up
 ```
+The first time may happen the api fails because the db won't be ready, just wait, stop and start again
 
 Then access `http://0.0.0.0:8000/` to see the results
 In this moment you can also see the documentation at `/redocs/` or `/swagger/`
@@ -36,3 +37,17 @@ Run unit tests with
 ```console
 $ docker-compose run api python manage.py test
 ```
+
+
+## Extra notes
+- I changed the default Django User to be the Employee model, this was not a good approach, but as I already did this way and the time was running low, I decided to keep this way.
+
+- No permission/auth system was used, the next step would be using some approach as token or session to protect the API
+
+- As another step I would change docker-compose to make it more similar to production, adding a webserver to the server instead of built-in django server, environment variable to set `DEBUG` and `DATABASE_URL`, and also add a script to wait for database be ready to the connection before starting the api
+
+- Another step, add coverage to track the test coverage
+
+- Add a CI
+
+- Improve models to fit better on each country, locale, documents
