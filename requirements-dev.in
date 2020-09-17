@@ -1,5 +1,6 @@
 -r requirements.in
 black
+factory_boy
 flake8
 ipdb
 isort
