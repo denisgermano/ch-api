@@ -1,6 +1,5 @@
 from decimal import Decimal
 
-from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MinValueValidator
 from django.db import models
@@ -24,7 +23,7 @@ class Company(BaseModel):
 
 
 class Employee(AbstractUser):
-    companies = models.ManyToManyField(Company, related_name="employees")
+    companies = models.ManyToManyField(Company, related_name="employees", blank=True)
     document = models.CharField(max_length=20)
     address = models.CharField(max_length=100)
     salary = models.DecimalField(

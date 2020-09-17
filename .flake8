@@ -1,3 +1,4 @@
 [flake8]
 max-line-length = 87
 max-complexity = 7
+exclude = */migrations/*
