@@ -9,7 +9,7 @@ from ..serializers import CompanySerializer, EmployeeSerializer
 
 class CompanyViewSet(viewsets.ModelViewSet):
     serializer_class = CompanySerializer
-    queryset = Company.objects.all()
+    queryset = Company.objects.prefetch_related("employees").all()
 
     @action(detail=True)
     def employees(self, request, *args, **kwargs):
