@@ -17,11 +17,11 @@ from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import include, path
 
-import account.urls
+import account.api.v1.urls
 
 urlpatterns = [
-    path("", lambda req: redirect("/account/v1/")),
+    path("", lambda req: redirect("/api/v1/accounts/")),
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
-    path("account/", include(account.urls)),
+    path("api/v1/accounts/", include(account.api.v1.urls)),
 ]
