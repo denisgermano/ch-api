@@ -1,5 +1,8 @@
+dj-database-url
 django
 django-countries
 djangorestframework
 drf-yasg
+gunicorn
 psycopg2-binary
+whitenoise
