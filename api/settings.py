@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # 3-party apps
     "django_countries",
     "rest_framework",
+    "drf_yasg",
     # own apps
     "account",
 ]

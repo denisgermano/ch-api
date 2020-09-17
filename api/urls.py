@@ -16,12 +16,30 @@ Including another URLconf
 from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import include, path
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+from rest_framework import permissions
 
 import account.api.v1.urls
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="CH API",
+        default_version="v1",
+        description="swagger and redoc for CH API",
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
 
 urlpatterns = [
     path("", lambda req: redirect("/api/v1/accounts/")),
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     path("api/v1/accounts/", include(account.api.v1.urls)),
+    path(
+        "swagger/",
+        schema_view.with_ui("swagger"),
+    ),
+    path("redoc/", schema_view.with_ui("redoc")),
 ]
